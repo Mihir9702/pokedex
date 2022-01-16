@@ -39,26 +39,26 @@ fetchPokemon();
 function createPokemonCard(pokemon) {
     const pokemonELS = document.createElement("div");
     pokemonELS.classList.add("pokemon");
-    const pokeTypes = pokemon.types.map(e => e.type.name).slice(0, 2);
+    const pokeTypes = pokemon.types.map(e => e.type.name).slice(0, 1) + " " + pokemon.types.map(e => e.type.name).slice(1, 2);
     const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
-    const pokeStat = pokemon.stats.map(e => e.stat.name).slice(0, 1);
+    const pokeStat = pokemon.stats.map(e => e.stat.name);
     const stats = pokeStat.slice(0, 3);
-    const baseValue = pokemon.stats.map(e => e.stat.name).slice(0, 1);
+    const baseValue = pokemon.stats.map(e => e.base_stat);
     const baseStat = baseValue.slice(0, 3);
-
+    
     const stat = stats.map(stat => {
         return `<li class="stat">${stat}</li>`;
     }).join("");
     const base = baseStat.map(base => {
         return `<li class="base">${base}</li>`;
     }).join("");
-
+    
     const pokeInnerHTML = `<div class="imgContainer">
     <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png" alt="${name}/> </div>
     <div class="info">
     <span class="number"> #${pokemon.id.toString().padStart(3, "0")}</span>
-    <h3 class="name"> ${name} </h3>
-    <small class="type"> <span>${pokeTypes}</span></small>
+    <h3 class="name">${name}</h3>
+    <small class="type"><span>${pokeTypes}</span></small>
     </div>
     <div class="stats">
     <h2>Stats</h2>
