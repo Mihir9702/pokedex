@@ -1,7 +1,7 @@
 let pokemons = [];
 const pokeContainer = document.getElementById("pokeContainer");
 const url = "https://pokeapi.co/api/v2/pokemon";
-const pNum = 151;
+const pNum = 493;
 const search = document.getElementById("search");
 const form = document.getElementById("form");
 
@@ -20,7 +20,7 @@ const removePokemon = () => {
         const pokemonEL = pokemonClass[i];
         removeablePokemons = [...removeablePokemons, pokemonEL];
     }
-    removeablePokemons.forEach((remPoke) => remPoke.remove());
+    removeablePokemons.forEach(remPoke => remPoke.remove());
 }
 
 const getPokemon = async (id) => {
@@ -39,18 +39,20 @@ fetchPokemon();
 function createPokemonCard(pokemon) {
     const pokemonELS = document.createElement("div");
     pokemonELS.classList.add("pokemon");
-    const pokeTypes = pokemon.types.map((el) => el.type.name).slice(0, 1);
+    const pokeTypes = pokemon.types.map(e => e.type.name).slice(0, 2);
     const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
-    const pokeStat = pokemon.stats.map((el) => el.stat.name).slice(0, 1);
+    const pokeStat = pokemon.stats.map(e => e.stat.name).slice(0, 1);
     const stats = pokeStat.slice(0, 3);
-    const baseValue = pokemon.stats.map((el) => el.stat.name).slice(0, 1);
+    const baseValue = pokemon.stats.map(e => e.stat.name).slice(0, 1);
     const baseStat = baseValue.slice(0, 3);
-    const stat = stats.map((stat) => {
-        return `<li class="names">${stat}</li>`;
+
+    const stat = stats.map(stat => {
+        return `<li class="stat">${stat}</li>`;
     }).join("");
-    const base = baseStat.map((base) => {
+    const base = baseStat.map(base => {
         return `<li class="base">${base}</li>`;
     }).join("");
+
     const pokeInnerHTML = `<div class="imgContainer">
     <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png" alt="${name}/> </div>
     <div class="info">
