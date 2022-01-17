@@ -3,6 +3,8 @@
 :root {
   --gray: #333;
   --gold: #d6c887;
+  --blue: #3ed3e7;
+  --dark: #091921;
 }
 
 * {
@@ -23,7 +25,7 @@ body {
   justify-content: center;
   font-family: "Caveat", cursive;
   margin: 0;
-  background: var(--gray);
+  background: var(--dark);
 }
 
 a {
@@ -45,7 +47,7 @@ h2 {
 }
 
 .pokemon {
-  background: var(--gray);
+  background: var(--dark);
   border-radius: 10px;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.9);
   border-top: 1px solid whitesmoke;
@@ -75,7 +77,7 @@ h2 {
 
 /* 000 */
 .pokemon .number {
-  background-color: var(--gold);
+  background-color: var(--blue);
   border-radius: 10px 0 10px;
   position: absolute;
   top: -1px;
@@ -93,7 +95,7 @@ h2 {
 }
 
 .type span {
-  color: var(--gold);
+  color: var(--blue);
   font-size: 1.2rem;
 }
 
@@ -109,8 +111,9 @@ h2 {
   transition: 0.3s ease-in;
   overflow: auto;
   height: 85%;
-  background-color: var(--gray);
-  color: var(--gold);
+  background-color: var(--dark);
+  color: var(--blue);
+  padding: 0 22px;
 }
 
 .stats p {
@@ -126,12 +129,11 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 
 .flex > ul {
   list-style: none;
-  padding: 0;
   text-align: left;
 }
 
@@ -147,13 +149,13 @@ h2 {
   margin: 1.5rem;
   background-color: transparent;
   border: none;
-  border-right: 2px solid var(--gold);
-  border-left: 2px solid var(--gold);
+  border-right: 2px solid var(--blue);
+  border-left: 2px solid var(--blue);
   border-radius: 50px;
   line-height: 1.2rem;
   font-size: 1.4rem;
   text-align: center;
-  color: var(--gold);
+  color: var(--blue);
   letter-spacing: 2px;
   font-family: "Caveat", cursive;
   transition: 0.3s ease-in;
@@ -175,7 +177,7 @@ h2 {
   position: fixed;
   width: 50px;
   height: 50px;
-  background: var(--gold);
+  background: var(--blue);
   bottom: 40px;
   right: 50px;
   text-decoration: none;
@@ -188,6 +190,6 @@ h2 {
 }
 
 .goTop:hover {
-  color: var(--gray);
+  color: var(--dark);
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.9);
 }
