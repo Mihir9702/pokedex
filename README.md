@@ -1,3 +1,3 @@
 # Pokedex
 Learning how to use API's to gather data
-![](https://user-images.githubusercontent.com/81565779/149673695-440afbd6-c2d7-4352-bdb2-e15bc9052674.PNG)
+![poke2](https://user-images.githubusercontent.com/81565779/149719482-4a7b9e7d-4f20-48f7-b783-8c8c53872101.PNG)
